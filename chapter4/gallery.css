@@ -1,0 +1,28 @@
+body{
+    margin:0px;
+    background-color: #ccc;
+}
+h1{
+    margin-left: 60px;
+    background-color: transparent;
+    font-weight: :bold;
+}
+ul{
+    margin:0px;
+}
+ul li{
+    padding:1px;
+    float: left;
+    list-style: none;
+    margin-bottom: 20px
+}
+#imagegallery a img{
+     margin:10px;
+}
+ 
+img#placeholder{
+    
+    display:block;
+    clear:both;
+    margin-left:50px;
+}
