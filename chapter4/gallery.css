@@ -6,6 +6,7 @@ h1{
     margin-left: 60px;
     background-color: transparent;
     font-weight: :bold;
+    color:forestgreen;
 }
 ul{
     margin:0px;
@@ -25,4 +26,9 @@ img#placeholder{
     display:block;
     clear:both;
     margin-left:50px;
+}
+#description{
+    margin: 30px;
+    font-weight:bold;
+    color:forestgreen;
 }

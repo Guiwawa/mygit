@@ -12,7 +12,7 @@ function showPic(whichpic){
     }
     return true;
 }
-window.onload=prepareGallery;
+ 
 function prepareGallery(){
     if(!document.getElementsByTagName||!document.getElementById)return false;
     if(!document.getElementById("imagegallery"))return false;
@@ -25,3 +25,34 @@ function prepareGallery(){
         }
     }
 }
+function preparePlaceholder(){
+    if(!document.createElement)return false;
+    if(!document.createTextNode)return false;
+    if(!document.getElementById)return false;
+    if(!document.getElementById("imagegallery"))return false;
+    var placeholder=document.createElement("img");
+    placeholder.setAttribute("id","placeholder");
+    placeholder.setAttribute("src","images/placeholder.gif");
+    placeholder.setAttribute("alt","my image gallery");
+    var description=document.createElement("p");
+    description.setAttribute("id","description");
+    var desctext=document.createTextNode("Choose an image");
+    description.appendChild(desctext);
+    var gallery=document.getElementById("imagegallery");
+     gallery.parentNode.insertBefore(placeholder,gallery);
+    gallery.parentNode.insertBefore(description,gallery);
+}
+function addLoadEvent(func){
+    var oldonload=window.onload;
+    if(typeof window.onload!='function'){
+        window.onload=func;
+    }
+    else{
+        window.onload=function(){
+        oldonload();
+        func();
+        }
+    }
+}
+addLoadEvent(preparePlaceholder);
+addLoadEvent(prepareGallery);
