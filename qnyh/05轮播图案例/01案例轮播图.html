@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            /*overflow: hidden;*/
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="all" id='box'>
+    <div class="screen">
+        <ul>
+            <li><img src="images/1.jpg" width="500" height="200"/></li>
+            <li><img src="images/2.jpg" width="500" height="200"/></li>
+            <li><img src="images/3.jpg" width="500" height="200"/></li>
+            <li><img src="images/4.jpg" width="500" height="200"/></li>
+            <li><img src="images/5.jpg" width="500" height="200"/></li>
+        </ul>
+        <ol>
+        </ol>
+    </div>
+    <div id="arr">
+        <span id="left">&lt;</span>
+        <span id="right">&gt;</span>
+    </div>
+</div>
+<script>
+    //获取元素
+    function my$(id) {
+        return document.getElementById(id);
+    }
+    //动画函数封装
+    function animate(element,target) {
+        clearInterval(element.timeId);
+        element.timeId=setInterval(function () {
+            var step=8;
+            var current=element.offsetLeft;
+            step=current<target?step:-step;
+            if(Math.abs(target-current)<=Math.abs(step)){
+                clearInterval(element.timeId);
+                element.style.left=target+"px";
+            }else{
+                current=current+step;
+                element.style.left=current+"px";
+            }
+        },10);
+    }
+    //获取box层
+    var box=my$("box");
+    //获取显示图片的层
+    var screen=box.children[0];
+    //获取显示图片的宽度
+    var imgWidth=screen.offsetWidth;
+    //获取ul
+    var ul=screen.children[0];
+    //获取ul中所有的li
+    var lis=ul.children;
+    //获取ol
+    var ol=screen.children[1];
+    //获取焦点层
+    var arr=my$("arr");
+    //获取left和right
+    var left=my$("left");
+    var right=my$("right");
+    var pic=0;//该变量配合左右按键使用,该变量的值应该和ol中li的索引一致
+    //遍历ul中所有的li,根据li的个数创建li并添加到ol中,
+    for(var i=0;i<lis.length;i++){
+        var li=document.createElement("li");
+        ol.appendChild(li);//添加li到ol中
+        //没每个li添加一个索引的属性,并设置值,
+        li.index=i;
+        //设置li中的文字内容
+        li.innerHTML=i+1;
+        //鼠标进入的事件
+        li.onmouseover=function () {
+          //设置样式,清理所有的li的样式,设置当前的li的样式
+            for(var j=0;j<ol.children.length;j++){
+                ol.children[j].className="";
+            }
+            this.className="current";
+            //移动图片
+            var target=-this.index*imgWidth;
+            animate(ul,target);
+            pic=this.index;
+        };
+    }
+    ol.children[0].className="current";
+    //因为要做无缝连接,所以把ul中的第一个li克隆追加到ul中
+    ul.appendChild(ul.children[0].cloneNode(true));
+    var timeId=null;
+    timeId=setInterval(rightHandle,1000);
+    //设置鼠标进入box后显示显示左右焦点层
+    box.onmouseover=function () {
+        arr.style.display="block";
+        clearInterval(timeId);
+    };
+    box.onmouseout=function () {
+        arr.style.display="none";
+        timeId=setInterval(rightHandle,1000);
+    };
+    //设置鼠标点击右边的按钮
+    right.onclick=rightHandle;
+    function rightHandle() {
+        console.log(lis.length);
+        if(pic==lis.length-1){
+            pic=0;
+            ul.style.left=0+"px";
+        }
+        pic++;
+        animate(ul,-pic*imgWidth);
+        if (pic==lis.length-1){
+            //此时显示第一张图片,设置ol中第一个li的类样式
+            ol.children[0].className="current";
+            //同时移除ol中最后一个li的样式
+            ol.children[ol.children.length-1].className="";
+        }else{
+            for(var i=0;i<ol.children.length;i++){
+                ol.children[i].className="";
+            }
+            ol.children[pic].className="current";
+        }
+    };
+    left.onclick=leftHandle;
+    function leftHandle() {
+        if(pic==0){
+          pic=lis.length-1;
+          ul.style.left=-(lis.length-1)*imgWidth+"px";
+        }
+        pic--;
+        animate(ul,-pic*imgWidth);
+        for(var i=0;i<ol.children.length;i++){
+            ol.children[i].className="";
+        }
+        ol.children[pic].className="current";
+    };
+
+
+
+</script>
+</body>
+</html>

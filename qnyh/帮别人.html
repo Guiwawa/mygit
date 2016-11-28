@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p,div{
+            margin:0;
+            padding:0;
+        }
+        .clearfix:after{
+            content:"";
+            height:0;
+            line-height:0;
+            display:block;
+            clear:both;
+            visibility:hidden;
+        }
+        .clearfix{
+            zoom:1;
+        }
+        .container{
+            width: 1000px;
+            height:200px;
+            margin:0 auto;
+            background-color: blue;
+            height: 84px;
+        }
+        .container p{
+            float:left;
+            line-height:84px;
+            font-size:24px;
+            color:red;
+            box-sizing:border-box;
+        }
+        .container01{
+            height: 84px;
+            border-bottom:2px solid red;
+
+        }
+        .container p:hover{
+            border-bottom:5px solid yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="container01 clearfix">
+        <p>课程服务</p>
+        <p style="margin-left:20px">Service</p>
+    </div>
+</div>
+</body>
+</html>

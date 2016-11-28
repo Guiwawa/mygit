@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        /*取消图片底部3像素距离*/
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            border: 1px solid red;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+
+        .box ul li {
+            float: left;
+        }
+
+        .box ul {
+            width: 1500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="screen">
+    <ul>
+        <li><img src="imagess/01.jpg" alt=""/></li>
+        <li><img src="imagess/02.jpg" alt=""/></li>
+        <li><img src="imagess/03.jpg" alt=""/></li>
+        <li><img src="imagess/04.jpg" alt=""/></li>
+        <li><img src="imagess/01.jpg" alt=""/></li>
+    </ul>
+</div>
+<script>
+    //动画函数
+    function animate(element,target) {
+        clearInterval(timeId);
+        var timeId=setInterval(function () {
+            var step=9;
+            var current=element.offsetLeft;
+            step=current<target?step:-step;
+            current=current+step;
+            if(Math.abs(target-current)<=Math.abs(step)){
+                element.style.left=target+"px";
+                clearInterval(timeId);
+            }else{
+                element.style.left=current+"px";
+            }
+        },20);
+    }
+    //获取元素的函数
+    function my$(id) {
+        return document.getElementById(id);
+    }
+    //获取外面的层
+    var screen=my$("screen");
+    //获取ul
+    var ul=screen.children[0];
+    var timeId=setInterval(f1,20);
+    function f1() {
+        var current=ul.offsetLeft;
+        var step=-9;
+        current=current+step;
+        if (current>-1200){
+            ul.style.left=current+"px";
+        }else{
+            ul.style.left=0+"px";
+        }
+    }
+    //设置鼠标进入和鼠标离开
+    screen.onmouseover=function () {
+        //停止
+        clearInterval(timeId);
+    };
+    screen.onmouseout=function () {
+        timeId=setInterval(f1,20);
+    };
+
+
+
+
+
+
+</script>
+</body>
+</html>
