@@ -1,0 +1,1538 @@
+/* 初始化*/
+html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu{
+    margin:0;
+    padding:0;
+}
+body,html{
+    background-color: #FBFBFB;
+    width: 100%;
+    min-width:1250px;
+    height:auto;
+    font-family: 微软雅黑;
+}
+body,a{
+    display:block;
+}
+em ,i{
+    font-style:normal;
+    color:#eaf2ff;
+    font-size: 12px;
+}
+li{
+   list-style:none;
+}
+a{
+    text-decoration:none;
+    color:#666;
+    margin:0;
+    padding:0;
+}
+input,img{
+    padding:0;
+    margin:0;
+    border:0 none;
+    outline-style:none;
+}
+/*清除浮动*/
+.clearfix:after{
+    content:"";
+    height:0;
+    line-height:0;
+    display:block;
+    clear:both;
+    visibility:hidden;
+}
+.clearfix{
+    zoom:1;
+}
+/*精灵图*/
+#wrap .header .littlt-logo,#left-02 .hander-logo,#left-02 .hander-logo em,#left-02 .lis02,#left-02 .lis02 .icon,#left-02 .lis03,#left-02 .lis03 .icon,#left-03 .service-box,#left-03 .service-tel .icon,#left-03 .lis05 a,#guidebox,#guidelink,#guidebox .guidebox-title,.guidebox-list01 .lis07 .icon,#center-03 .career-list .person-skill,#center-03 .person-sex .sex-name,#center-03 .person-sex .sex-img,#center-04,#center-04 .play-box .icon,#center-04  .luntan-show  .a-img,#center-04 .farmous,#center-04 .game,#right-01 .search,#right-02 .newbox-hot .icon,#right-03,.icon,#right-03 .hidden-div,#right-03 .videobox-list li,#right-04,#right-05,#sidebar .sid-box .sid-code,.header-second li:last-child .subnav{
+    background: url("images/bar-little.png") no-repeat;
+}
+/*===============================================================================================================*/
+/*header部分*/
+header{
+    width:100%;
+    padding-top:2px;
+}
+header{
+    margin:0 auto;
+    max-width:1050px;
+}
+header .header-first{
+    height:55px;
+}
+header .header-first .header-logo{
+    display:block;
+    width: 133px;
+    height: 44px;
+    float: left;
+    background-image: url("images/logo.png") ;
+}
+
+header .mid-01{
+    float:left;
+}
+header .mid-01 img{
+    display:block;
+    border:0;
+}
+header .header-mid .mid-02{
+    position: relative;
+    z-index:5;
+    display:none;
+}
+header .header-mid .header-right{
+    margin-left:70px;
+}
+header .header-mid .header-right a{
+    position: relative;
+    float: left;
+    display:block;
+    height: 52px;
+    line-height: 52px;
+    text-align:center;
+    padding:0 20px;
+    font-size:10px;
+    color:#999;
+}
+header .header-first .header-right a:nth-child(3){
+    color:#bc2e2e;
+}
+header .header-first .header-right a:hover{
+    color:#bc2e2e;
+    border-bottom:3px solid #bc2e2e;
+    background-image: linear-gradient(to bottom,#ddd,#fff);
+}
+.header-right a:nth-child(3) em{
+    display:inline-block;
+    position: absolute;
+    top:23px;
+    border:5px solid #bc2e2e;
+    border-left-color:transparent;
+    border-bottom-color:transparent;
+    border-right-color:transparent;
+    width: 0;
+    height: 0;
+}
+header .header-right .top-trans{
+    position: relative;
+    display: block;
+    animation: move 1.5s ease-in-out infinite;
+ }
+header .header-right .top-trans:hover{
+    animation:none;
+}
+@keyframes move{
+    0%{
+        transform:translateY(25px);
+    }
+    50%{
+        transform:translate(0px);
+    }
+    70%{
+        transform:translate(0px);
+    }
+    100%{
+        transform:translateY(-40px);
+    }
+}
+/*导航部分*/
+header .header-second{
+    height: 60px;
+    /*border:2px solid red;*/
+}
+.header-second ul{
+    /*float: left;*/
+    height: 100%;
+}
+.header-second ul li{
+    float: left;
+}
+.header-second ul li a{
+    display: block;
+    width: 130px;
+    height: 60px;
+}
+.header-second li span{
+    display: block;
+    width: 130px;
+    height: 60px;
+    text-indent: -2000px;
+}
+
+.header-second li .subnav{
+    display:none;
+    text-align: center;
+    position:relative;
+    z-index:3;
+    width: 130px;
+    background-image:linear-gradient(to bottom,#C72525,#eee);
+}
+.header-second li .subnav a{
+    display: block;
+    height: 33px;
+}
+.header-second li:last-child .subnav{
+    width: 130px;
+    height: 165px;
+    background-position: -180px -354px;
+    background-color: #C72525;
+}
+
+
+
+
+
+
+
+
+
+#navbar li:nth-child(1) span{
+    background: url("images/nav.png") -850px -120px no-repeat;
+}
+#navbar li:nth-child(1) a{
+    background: url("images/nav.png") -850px -60px no-repeat;
+}
+#navbar li:nth-child(2) span{
+    background: url("images/nav.png") -980px -60px no-repeat;
+}
+#navbar li:nth-child(3) span{
+    background: url("images/nav.png") -1110px -60px no-repeat;
+}
+#navbar li:nth-child(4) span{
+    background: url("images/nav.png") -1240px -60px no-repeat;
+}
+#navbar li:nth-child(5) span{
+    background: url("images/nav.png") -1370px -60px no-repeat;
+}
+#navbar li:nth-child(6) span{
+    background: url("images/nav.png") -1500px -60px no-repeat;
+}
+#navbar li:nth-child(7) span{
+    background: url("images/nav.png") -1630px -60px no-repeat;
+}
+#navbar li:nth-child(8) span{
+    background: url("images/nav.png") -1760px -60px no-repeat;
+}
+.spanbgi01{
+    background:url("images/nav.png") -850px -120px no-repeat;
+}
+.spanbgi02{
+    background:url("images/nav.png") -980px -120px no-repeat;
+}
+.spanbgi03{
+    background:url("images/nav.png") -1110px -120px no-repeat;
+}
+.spanbgi04{
+    background:url("images/nav.png") -1240px -120px no-repeat;
+}
+.spanbgi05{
+     background:url("images/nav.png") -1370px -120px no-repeat;
+ }
+.spanbgi06{
+      background:url("images/nav.png") -1500px -120px no-repeat;
+  }
+.spanbgi07{
+    background:url("images/nav.png") -1630px -120px no-repeat;
+}
+.spanbgi08{
+    background:url("images/nav.png") -1630px -120px no-repeat;
+}
+
+/*===================================================================================================*/
+
+/*主体部分开始*/
+
+/*背景图片部分开始*/
+/*底部背景*/
+#out-bg{
+    width: 100%;
+    background:url("images/bgc-bottom.jpg") center 1340px no-repeat;
+}
+/*头部背景*/
+#bg{
+    width: 100%;
+    background:url("images/bgc-top.jpg") center -60px no-repeat;
+}
+/*中间背景*/
+#out-wrap{
+    width: 100%;
+background:url("images/bgc-mid.jpg") center 740px no-repeat;
+}
+/*背景图片部分结束*/
+/*====================================================================*/
+/*主体高度*/
+#wrap{
+    width: 100%;
+    height: 2220px;
+}
+/*========================================================================*/
+/*主体中的头部开始*/
+#wrap .header{
+    width: 1200px;
+    height: 540px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+}
+/*倩女幽魂主题图片*/
+#wrap .header .header-logo{
+    display:block;
+    width: 650px;
+    height: 140px;
+    margin:0 auto;
+    background:url("images/bar-header.png") no-repeat;
+}
+/*一笑倾城主题图片*/
+#wrap .header .mid-logo{
+
+    width: 680px;
+    height: 360px;
+    margin:0 auto;
+    background: url("images/bar-title.png") no-repeat;
+}
+/*新版公测主体图片:需要绝对定位到一笑倾城图片里面，因此父元素相对定位*/
+#wrap .header .littlt-logo{
+    display:block;
+    position:absolute;
+    left:650px;
+    top:400px;
+    width: 155px;
+    height: 50px;
+    background:url("images/bar-little.png") no-repeat -810px -1010px;
+}
+/*主体中的头部结束*/
+/*======================================================================================*/
+/*主体中的内容部分开始*/
+#content{
+    width: 1250px;
+    margin:0 auto;
+    /*background-color: red;*/
+}
+.f1{
+    float:left;
+}
+/*内容部分的左侧   有三个盒子从上到下*/
+#content-left{
+    width: 170px;
+}
+.content-box{
+    margin-bottom:10px;
+}
+/*左侧的第一个盒子开始*/
+/*a的中的span添加背景*/
+#links_download span{
+    display:block;
+    width: 100%;
+    height: 120px;
+    background:url("images/bar-little.png") no-repeat 0 -1237px;
+}
+#left-01 .lis01{
+    width: 170px;
+    height: 240px;
+    background: url("images/bg-lis01.jpg") no-repeat center top;
+}
+#left-01 .lis01 li{
+    float: left;
+    padding-top:15px;
+    position: relative;
+    text-align: center;
+    width: 85px;
+    height: 65px;
+}
+#left-01 .lis01 a{
+    width: 85px;
+    height: 65px;
+    text-align: center;
+}
+#left-01 .lis01 .icon{
+    display:block;
+    width: 35px;
+    height: 35px;
+    margin:0 auto;
+    background:url("images/bar-little.png") no-repeat -1382px -910px;
+}
+#left-01 .lis01 em{
+    position: relative;
+    font-style:normal;
+    color:#eaf2ff;
+    font-size: 12px;
+    display:block;
+    height:30px;
+    transition:all .2s ease-in-out .1s;
+}
+#left-01 .lis01 a:hover{
+    margin-top:-10px;
+}
+#left-01 .lis01 .icon02{
+    background-position: -1382px -875px;
+}
+#left-01 .lis01 .icon03{
+    background-position: -853px -730px;
+}
+#left-01 .lis01 .icon03{
+    background-position: -853px -730px;
+}
+#left-01 .lis01 .icon04{
+    background-position: -855px -790px;
+}
+#left-01 .lis01 .icon05{
+    background-position: -1380px -837px;
+}
+#left-01 .lis01 .icon06{
+    background-position: -1356px -1008px;
+}
+/*左侧第一个盒子结束*/
+/*================================================*/
+/*左侧第二个盒子开始*/
+#left-02{
+    width: 170px;
+}
+/*第二个盒子中的a开始*/
+#left-02 .hander-logo{
+    width: 170px;
+    height: 130px;
+    text-align: center;
+    background-position:-912px -1100px;
+}
+#left-02 .hander-logo em{
+    display:block;
+    float: left;
+    width: 66px;
+    height: 66px;
+    background-position: -1370px -300px;
+    margin-top:30px;
+    margin-left:10px;
+}
+#left-02 .hander-logo i{
+    font-size:14px;
+    display:block;
+    float: right;
+    margin-top:36px;
+    text-align: center;
+    line-height:24px;
+}
+/*第二个盒子中的a结束*/
+/*左侧第二个盒子中的第一个ul开始*/
+#left-02 .lis02{
+    background-position: 0 -130px;
+    padding:23px 0;
+}
+#left-02 .lis02 li{
+    height: 30px;
+    padding:15px 0px 15px 20px;
+}
+#left-02 .lis02 .icon{
+    display:block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align:center;
+    transition:all 1s linear .1s;
+}
+#left-02 .lis02 .icon:hover{
+    transform:rotateY(360deg);
+}
+#left-02 .lis02 .icon07{
+    background-position: -1420px -750px;
+}
+#left-02 .lis02 .icon08{
+    background-position: -1420px -720px;
+}
+#left-02 .lis02 .icon09{
+    background-position: -1420px -690px;
+}
+#left-02 .lis02 em{
+    font-size:14px;
+    float: left;
+    display:block;
+    line-height:30px;
+    height:30px;
+    text-align:center;
+    margin-left:7px;
+}
+/*左侧第二个盒子中的第一个ul结束*/
+/*左侧第二个盒子中的第二个ul开始*/
+#left-02 .lis03{
+    width: 170px;
+    height: 160px;
+    background-position: 0 -357px;
+    /*background-color: red;*/
+}
+#left-02 .lis03 a{
+    width: 85px;
+    height: 65px;
+    text-align:center;
+}
+#left-02 .lis03 li{
+    float: left;
+    padding-top:15px;
+}
+#left-02 .lis03 .icon{
+    display:block;
+    width: 30px;
+    height: 30px;
+    margin:0 auto;
+    text-align:center;
+}
+#left-02 .lis03 em{
+    display:block;
+    margin:0 auto;
+    transition:all 1s linear .1s;
+}
+#left-02 .lis03 .icon10{
+    background-position: -1420px -660px;
+}
+#left-02 .lis03 .icon11{
+    background-position: -1420px -630px;
+}
+#left-02 .lis03 .icon12{
+    background-position: -1420px -600px;
+}
+#left-02 .lis03 .icon13{
+    background-position: -1420px -562px;
+}
+#left-02 .lis03 a:hover{
+    transform:translateY(-10px);
+}
+/*左侧第二个盒子结束*/
+/*左侧第三个盒子开始*/
+#left-03 .service-box{
+    width: 100%;
+    height: 162px;
+    padding-top:50px;
+    background-position: -890px -600px;
+}
+/*左侧第三个盒子中的div开始*/
+#left-03  .lis04{
+
+    padding:15px 0px 15px 10px;
+}
+#left-03  .lis04 li{
+    background: url("images/li-dash.gif") no-repeat 0 center;
+    width: 80px;
+    height: 24px;
+    float:left;
+    text-align: center;
+    line-height:24px;
+}
+#left-03  .lis04 a{
+    color:#eaf2ff;
+    font-size: 12px;
+}
+#left-03 .service-tel{
+    margin-left:10px;
+}
+#left-03 .service-tel .icon14{
+    margin-top:3px;
+    display:block;
+    width: 32px;
+    height: 32px;
+    float: left;
+    background-position: -1417px -875px;
+}
+#left-03 .service-tel em{
+    float:left;
+    font-size:14px;
+    color:#0f3063;
+    padding-left:10px;
+    line-height:22px;
+}
+/*左侧第三个盒子中的div结束*/
+/*左侧第三个盒子中的最下面ul开始*/
+#left-03 .lis05 li{
+    width: 85px;
+    height: 85px;
+    float: left;
+}
+#left-03 .lis05 a{
+    display:block;
+    width: 85px;
+    height: 84px;
+    text-indent: -20000px;
+}
+#left-03 .lis05 li:nth-child(1) a{
+    background-position: -300px -840px;
+}
+#left-03 .lis05 li:nth-child(2) a{
+    background-position: -385px -840px;
+}
+#left-03 .lis05 li:nth-child(3) a{
+    background-position: -300px -924px;
+}
+#left-03 .lis05 li:nth-child(4) a{
+    background-position: -385px -924px;
+}
+#left-03 .lis05 li:nth-child(1) a:hover{
+    background-position: -320px -350px;
+}
+#left-03 .lis05 li:nth-child(2) a:hover{
+    background-position: -405px -350px;
+}
+#left-03 .lis05 li:nth-child(3) a:hover{
+    background-position: -320px -434px;
+}
+#left-03 .lis05 li:nth-child(4) a:hover{
+    background-position: -405px -434px;
+}
+/*左侧第三个盒子结束*/
+/*左侧结束*/
+/*=====================================================================================================================*/
+/*中间部分开始*/
+/*中间部分的第一个盒子开始*/
+#content-center {
+    margin:0 10px 0 10px;
+    float: left;
+}
+#center-01{
+    width: 700px;
+    height: 300px;
+    position:relative;
+}
+/*官网链接部分*/
+#link-switch{
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:2;
+}
+#link-switch a{
+    float:left;
+    display: block;
+    width: 50px;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+}
+#link-switch a:nth-child(1){
+    background-color: #ae844f;
+    color:#fff;
+}
+#link-switch a:nth-child(2){
+    background-color: #fff;
+    color: #ae844f;
+}
+/*轮播图部分开始*/
+#content-bar{
+    position:relative;
+    overflow: hidden;
+    width: 700px;
+    height: 300px;
+}
+#content-bar .li-nav{
+    z-index:1;
+}
+#content-bar .li-nav ul{
+    position: absolute;
+    top:265px;
+}
+#content-bar .li-nav li{
+    float: left;
+    width: 233px;
+    height: 36px;
+    text-align:center;
+    line-height:36px;
+    color:#617392;
+    font-size:14px;
+    cursor: pointer;
+    background:url("images/bar-little.png") no-repeat -415px -1061px;
+
+}
+#content-bar .li-nav li.current{
+    color:#fff;
+    background:url("images/bar-little.png") no-repeat -170px -1288px;
+}
+/*图片部分开始*/
+#content-bar .lis06{
+    position:absolute;
+    left:0;
+    top:0;
+    width: 3000px;
+}
+#content-bar .lis06 li{
+    width: 700px;
+    height: 300px;
+    float:left;
+}
+/*轮播结束*/
+/*==============================================================================================*/
+/*中间第二个盒子开始*/
+#center-02{
+    width: 700px;
+    height: 300px;
+}
+#guidebox{
+    float: left;
+    width: 560px;
+    height: 300px;
+    background-position: -890px 0;
+}
+#guidebox .guidebox-list{
+    width: 280px;
+    height: 150px;
+    float: left;
+}
+#guidebox .guidebox-title{
+    width: 280px;
+    height: 50px;
+}
+#guidebox .guidebox-title01{
+    background-position: -526px -1008px;
+}
+#guidebox .guidebox-title02{
+    background-position: -450px -1238px;
+}
+#guidebox .guidebox-title03{
+    background-position: -170px -1238px;
+}
+#guidebox .guidebox-title04{
+    background-position: -960px -1008px;
+}
+/*第二个盒子的第一部分*/
+.guidebox-list01 .lis07{
+    margin:0 12px;
+}
+.guidebox-list01 .lis07 li{
+    float: left;
+}
+.guidebox-list01 .lis07 a{
+    display:block;
+    width: 85px;
+    height: 75px;
+    text-align: center;
+}
+.guidebox-list01 .lis07 .icon{
+    margin:0 auto;
+    width: 50px;
+    height: 40px;
+    display:block;
+    background-position: -1210px -560px;
+}
+.guidebox-list01 .lis07 em{
+    font-size:14px;
+    color:#8e8e8d;
+    height:30px;
+    /*translition:all .2s linear .1s;*/
+    position:relative;
+    top:0;
+}
+.guidebox-list01 .lis07 a:hover{
+    transform:translateY(-10px);
+}
+.guidebox-list .lis08{
+    width: 255px;
+    margin:0 auto;
+    padding-top:26px;
+}
+.guidebox-list .lis08 li{
+    float: left;
+    width: 85px;
+    height: 24px;
+    text-align: center;
+    cursor: pointer;
+    /*line-height: 85px;*/
+}
+.guidebox-list .lis08 a{
+    margin:0 auto;
+    width: 56px;
+    height: 20px;
+    display: block;
+    font-size:14px;
+    color:#8e8e8d;
+    transition:all .5s ease ;
+}
+.guidebox-list #lis-09{
+    padding-top:10px;
+}
+.guidebox-list #lis-09 a{
+    width: 70px;
+}
+.guidebox-list #lis-10{
+    padding-top:10px;
+}
+.guidebox-list .lis08 a:hover{
+    color:#B79369;
+    transform:scale(1.5,1.5);
+}
+/*第二个盒子的侧边*/
+#guidelink{
+    float: left;
+    display:block;
+    width: 140px;
+    height: 300px;
+    background-position: -890px -300px;
+}
+#guidelink:hover{
+    background:url("images/bar-little.png") no-repeat -1030px -300px;
+}
+/*第二个盒子结束*/
+/*=======================================================================================================*/
+/*第三个盒子开始*/
+#center-03{
+    width: 700px;
+    height: 350px;
+    background:url("images/bg_center03.jpg") center top no-repeat;
+    position: relative;
+}
+#carnav{
+    position: absolute;
+    width: 680px;
+    height: 50px;
+    margin:0 auto;
+    z-index:10;
+    border-bottom:1px solid #ccc;
+}
+#carnav li{
+    float: left;
+}
+#carnav a{
+    display: block;
+    width: 68px;
+    height: 50px;
+    text-align:center;
+    line-height: 50px;
+    cursor: pointer;
+}
+#carnav .on{
+    border-bottom:3px solid #C72525;
+    color:#C72525;
+    font-weight:400;
+}
+/*第三个盒子的角色部分开始*/
+#center-03 .career-list{
+    position: absolute;
+    left:25px;
+    top:0;
+    width: 675px;
+    height: 350px;
+}
+#center-03 .career-list .person-name{
+    position: absolute;
+    width: 240px;
+    height: 45px;
+    top:68px;
+    background:url("images/person-name01.png") no-repeat;
+}
+#center-03 .career-list .person-work{
+    color:#ae844f;
+    font-size:14px;
+    width: 190px;
+    height: 30px;
+    position: absolute;
+    top:134px;
+    border-top:1px solid #a4a3a1;
+    border-bottom:1px solid #a4a3a1;
+    text-align: center;
+    line-height:30px;
+}
+#center-03 .career-list .xq-a{
+    display: block;
+    position: absolute;
+    top:134px;
+    left:195px;
+    width: 55px;
+    height: 32px;
+    background-color: #ae844f;
+    color:#fff;
+    text-align:center;
+    line-height:30px;
+}
+#center-03 .career-list .person-skill{
+    position:absolute;
+    top:192px;
+    width: 152px;
+    height: 138px;
+    background-position: -305px -1100px;
+}
+#center-03 .career-list .person-sex{
+    position: absolute;
+    bottom:10px;
+    right:10px;
+    width: 115px;
+    height: 100px;
+}
+#center-03 .person-sex .active{
+    position: absolute;
+    right:0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -800px -650px;
+}
+#center-03 .person-sex .sex-name{
+    display:block;
+    width: 100px;
+    height: 40px;
+    line-height:42px;
+    padding-left:15px;
+    position: absolute;
+    bottom:10px;
+    background-position: -1240px -1008px;
+}
+#center-03 .person-img{
+    width: 700px;
+    height: 350px;
+    margin-left:-25px;
+    background:url("images/person-img01.png") no-repeat;
+}
+#center-03 .hide-img{
+    display:none;
+    width: 700px;
+    height: 350px;
+    margin-left:-25px;
+    background:url("images/person-img02.png") no-repeat;
+}
+/*每一个角色的盒子要定位*/
+#center-03 .caeeer-block{
+    position: absolute;
+}
+/*==========================================================================*/
+/*第四个盒子的开始*/
+#center-04{
+    width: 700px;
+    height: 300px;
+    background-position: 0 -530px;
+    position: relative;
+
+}
+#center-04 .play-box{
+    display:block;
+    position:absolute;
+    right:10px;
+    text-align:center;
+    line-height: 50px;
+}
+#center-04 .play-box em{
+    float: left;
+    font-size:14px;
+    color:#686079;
+}
+#center-04 .play-box .icon{
+    margin-top:18px;
+    margin-left:10px;
+    display:block;
+    float: left;
+    width: 13px;
+    height: 13px;
+    background-position: -1436px -300px;
+}
+#center-04 .play-box .changeColor{
+    color:#ae844f;
+}
+#center-04 .play-box .changeBg{
+    background-position: -1436px -313px;
+}
+#center-04 .luntan-box{
+    width: 100%;
+    height: 100%;
+    padding-top:50px;
+}
+#center-04 .luntan-box .luntan-show{
+    width: 500px;
+    height: 250px;
+    float: left;
+}
+#center-04  .luntan-show .a-img{
+    float: left;
+    display: block;
+    width: 100px;
+    height: 250px;
+    background-position: -700px -530px;
+}
+/*漫画图片部分*/
+#center-04 .manhua-box{
+    float: left;
+    padding:15px 20px 15px 20px;
+    /*text-align: center;*/
+    width: 360px;
+    height: 220px;
+}
+#center-04 .manhua-img a{
+    display: block;
+    float: left;
+    margin-top:5px;
+    margin-left:10px;
+}
+#center-04 .lis09 li{
+    width:330px;
+    height: 37px;
+    margin-left:10px;
+    line-height:37px;
+    border-bottom:1px dashed #ccc;
+}
+#center-04 .lis09 a{
+    float: left;
+    font-size:13px;
+}
+#center-04 .lis09 span{
+    display:block;
+    float: right;
+}
+#center-04 .lis09 .on{
+    color:#bc2e2e;
+}
+/*<!--名人堂部分-->*/
+#center-04 .farmous{
+    float: left;
+    display:block;
+    width: 100px;
+    height: 250px;
+    background-position: -1270px -300px;
+}
+#center-04 .farmous:hover{
+    background-position: -1170px -300px;
+}
+#center-04 .game{
+    float: left;
+    display:block;
+    width: 100px;
+    height: 250px;
+    background-position: -200px -840px;
+}
+#center-04 .game:hover{
+    background-position: -100px -840px;
+}
+/*中间第四个盒子结束*/
+/*====================================================================*/
+/*内容部分的右侧开始*/
+#content-right{
+    width: 360px;
+    height: 100%;
+
+}
+#right-01{
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+}
+#right-01 .nav{
+    width: 100%;
+}
+#right-01 .nav .lis10{
+    float: left;
+    padding-left:10px;
+}
+#right-01 .nav .lis11{
+    float: right;
+    padding-right:10px;
+}
+#right-01 .nav  li{
+    height: 32px;
+    line-height:32px;
+    float: left;
+    margin-left:3px;
+}
+#right-01 .nav  a{
+    font-size:12px;
+    color:#3e3a39;
+    padding-left:6px;
+    background:url("images/li-01.gif") no-repeat left center;
+}
+#right-01 .nav  a:hover{
+    border-bottom:1px solid #ccc;
+}
+/*<!--搜索框部分-->*/
+#right-01 .search{
+    width: 340px;
+    height: 28px;
+    margin-top:5px;
+    margin-left:10px;
+    background-position: -890px -812px;
+}
+#right-01 .search input{
+    height:25px;
+    line-height:25px;
+    float: left;
+    margin-top:1px;
+    margin-left:5px;
+    font-size:13px;
+}
+#right-01 .search a{
+    text-indent: -20000px;
+    display:block;
+    width: 30px;
+    height: 27px;
+    float: right;
+}
+#right-01 .search a:hover{
+    background: url("images/bar-little.png") no-repeat -1230px -812px;
+}
+/*右侧第一个盒子结束*/
+/*=======================================================*/
+/*右侧第二个盒子开始*/
+#right-02{
+    width: 360px;
+    height: 310px;
+    background-color: #fff;
+}
+#right-02 .newbox-tab{
+    height: 37px;
+    margin-left:5px;
+    margin-right:5px;
+    border-bottom:1px solid #ccc;
+}
+#right-02 .newbox-tab li{
+    float: left;
+}
+#right-02 .newbox-tab a{
+    display:block;
+    width: 50px;
+    height: 37px;
+    text-align: center;
+    line-height:37px;
+    margin:0 10px;
+}
+#right-02 .newbox-tab .on{
+    color:#bc2e2e;
+    border-bottom:2px solid #bc2e2e;
+}
+#right-02 .newbox-hot{
+    width: 350px;
+    margin:0 auto;
+    padding:14px 0;
+    border-bottom:1px dashed #ccc;
+    text-align: center;
+}
+#right-02 .newbox-hot a{
+    color:#bc2e2e;
+    font-weight:bold;
+}
+#right-02 .newbox-hot .icon{
+    float: right;
+    width: 29px;
+    height: 11px;
+    margin-top:5px;
+    display:block;
+    background-position: -1370px -536px;
+}
+#right-02 .newbox-hot .icon15{
+    margin-right:55px;
+}
+#right-02 .newbox-hot .icon16{
+    margin-right:10px;
+}
+#right-02 .newbox-hot a:hover{
+    color:red;
+}
+#right-02 .newbox-list{
+    width: 320px;
+    margin:0 auto;
+    height: 168px;
+    padding-top:15px;
+    overflow: hidden;
+}
+#right-02 .tempwrap{
+    position: relative;
+    width: 320px;
+    margin:0 auto;
+    height: 224px;
+}
+#right-02 .bd{
+    position: absolute;
+    width: 2240px;
+    height: 224px;
+    overflow: hidden;
+}
+#right-02 .bd ul{
+    float: left;
+}
+#right-02 .bd ul li{
+    width: 320px;
+    height: 28px;
+    overflow: hidden;
+    line-height:28px;
+}
+#right-02 .bd ul a{
+    display: block;
+    float: left;
+    width: 270px;
+
+}
+#right-02 .bd ul span {
+    font-size: 14px;
+    display: block;
+    float: right;
+    width: 48px;
+    height: 28px;
+}
+/*右侧第二个盒子结束*/
+/*==========================================*/
+/*右侧第三个盒子开始*/
+#right-03{
+    width: 360px;
+    height: 350px;
+    background-position: -170px 0;
+    overflow: hidden;
+}
+#right-03 .more-link{
+    display:block;
+    float: right;
+    height: 50px;
+    line-height:50px;
+    margin-right:10px;
+}
+#right-03 .more-link em{
+    margin-right:5px;
+    float: left;
+    font-size:14px;
+    color: #8e8e8d;
+}
+#right-03 .more-link .icon17{
+    margin-top:18px;
+    float: left;
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-position: -1436px -300px;
+}
+#right-03 .more-link .changeColor{
+    color:#ae844f;
+}
+#right-03 .more-link .changeBg{
+    background-position: -1436px -313px;
+}
+#right-03 .videobox{
+    position: relative;
+    width: 340px;
+   margin:0 auto;
+    height: 290px;
+    margin-top:50px;
+}
+#right-03 .videobox .videobox-title{
+    width: 340px;
+    height: 30px;
+    padding:10px 0px;
+}
+#right-03 .videobox-title .t1{
+    float: left;
+    margin-left:30px;
+}
+#right-03 .videobox-title .t2{
+    float: left;
+    width: 120px;
+    height: 30px;
+    line-height:30px;
+    margin-left:32px;
+    display: block;
+}
+#right-03 .videobox-title .t3{
+    float: right;
+    margin-right:30px;
+}
+#right-03 .videobox-title .icon{
+    display: block;
+    width: 60px;
+    height: 30px;
+    background-position: -470px -977px;
+}
+#right-03 .videobox-content{
+    z-index:2;
+    position: absolute;
+    top:50px;
+    width: 340px;
+    height: 195px;
+    background-color: yellow;
+}
+/*遮罩层*/
+#right-03 .hidden-div{
+    width: 300px;
+    height: 170px;
+    position: absolute;
+    left:20px;
+    top:60px;
+    z-index:3;
+    background-position: -550px -320px;
+    animation:big 3s ease-in-out infinite;
+}
+@keyframes big {
+    0%{
+        transform:scale(1,1);
+    }
+
+    50%{
+        transform:scale(1.5,1.5);
+
+    }
+    100%{
+        transform:scale(1,1);
+    }
+}
+#right-03 .videobox-list{
+    z-index:5;
+    position: absolute;
+    bottom:0px;
+    /*background-color: red;*/
+}
+#right-03 .videobox-list li{
+    z-index:5;
+    float: left;
+    width: 113px;
+    height: 53px;
+    line-height:60px;
+    font-size:14px;
+    text-align: center;
+    background-position: -300px -1008px;
+    cursor: pointer;
+}
+#right-03 .videobox-list .on{
+    z-index:5;
+    overflow: visible;
+    background-position: -412px -1008px;
+}
+/*================================================================*/
+/*右侧第四个盒子开始*/
+#right-04{
+    width: 360px;
+    height: 210px;
+    background-position: -1060px -600px;
+}
+#right-04 ul{
+    height: 210px;
+    width: 180px;
+    padding-left:120px;
+}
+#right-04 ul li{
+    font-size:14px;
+    height: 60px;
+    padding-top:10px;
+    text-align:left;
+}
+#right-04 ul p{
+    width: 180px;
+    height: 22px;
+}
+#right-04 ul a{
+    color:#bc2e2e;
+}
+#right-04 ul a:hover{
+    color:red;
+}
+/*右侧第四个盒子结束*/
+/*=========================================================*/
+#right-05{
+    width: 360px;
+    height: 250px;
+    padding-top:50px;
+    background-position: -530px 0;
+}
+#right-05 .topbox{
+    overflow: hidden;
+    width: 340px;
+    height: 130px;
+    margin:0 auto;
+    margin-top:10px;
+
+}
+#right-05  img{
+    transition:all .5s linear;
+}
+#right-05 img:hover{
+    transform:scale(1.1,1.1);
+}
+#right-05 .bottombox{
+    overflow: hidden;
+    width: 350px;
+    height: 110px;
+    margin:0 auto;
+}
+#right-05 .bottombox a{
+    overflow: hidden;
+    display: block;
+    width: 165px;
+    height: 100px;
+    float: left;
+    margin:5px;
+}
+/*右侧结束*/
+/*=================================================*/
+/*<!--主体中底部链接部分-->*/
+#bottomshare{
+    margin-top:50px;
+    padding:30px 0;
+    width: 100%;
+    text-align:center;
+}
+#bottomshare .bottom-list{
+    width: 700px;
+    /*height: 20px;*/
+    margin:0 auto;
+}
+#bottomshare .bottom-list span{
+    font-size:14px;
+    float: left;
+}
+#bottomshare .bottom-list ul{
+    float: left;
+}
+#bottomshare .bottom-list li{
+    width: 80px;
+    height: 20px;
+    float: left;    
+}
+#bottomshare .bottom-list .lis12 span{
+    display:block;
+    width: 20px;
+    height: 20px;
+    background:url("images/linkImg01.png") no-repeat;
+    background-size:contain;
+}
+#bottomshare .bottom-list em{
+    color:#3e3a39;
+    font-size:14px;
+}
+#bottomshare .bottom-list em:hover{
+    color:#bc2e2e;
+}
+/*底部链接结束*/
+/*===========================================*/
+/*最底部开始*/
+#footer{
+    width: 100%;
+    height: 160px;
+
+    margin-top:30px;
+}
+#footer .bottom-box{
+    width: 100%;
+    height: 145px;
+
+}
+#footer .bottom-box .p-box{
+    width: 900px;
+    height: 135px;
+    padding-top:10px;
+
+    margin:0 auto;
+}
+#footer .bottom-box .s1{
+    float: left;
+}
+#footer .bottom-box .s1 a{
+    display:block;
+    float: left;
+}
+#footer .bottom-box .s1 a:nth-child(1){
+    width: 118px;
+    height: 31px;
+    background:url("images/footer01.png") no-repeat;
+}
+#footer .bottom-box .s1 a:nth-child(2){
+    width: 134px;
+    height: 31px;
+    background:url("images/footer02.png") no-repeat;
+}
+#footer .bottom-box .s1 a:nth-child(3){
+    margin-left:10px;
+    width: 39px;
+    height: 35px;
+    background:url("images/footer03.png") no-repeat;
+}
+#footer .bottom-box .s1 a:nth-child(4){
+    margin-left:15px;
+    margin-top:6px;
+    width: 31px;
+    height: 31px;
+    background:url("images/footer04.png") no-repeat;
+}
+#footer .bottom-box .s1 a:nth-child(5){
+    margin-left:15px;
+    margin-top:6px;
+    width: 31px;
+    height: 35px;
+    background:url("images/footer05.png") no-repeat;
+}
+#footer .bottom-box .s2{
+    position: relative;
+    font-size:14px;
+    margin-left:20px;
+    margin-top:5px;
+    float: left;
+}
+#footer .p-box .s2-link{
+    margin-bottom:6px;
+    display: block;
+    width: 450px;
+}
+#footer .p-box .s2-link a{
+    display:inline-block;
+    font-size:12px;
+}
+#footer .p-box  .a-link{
+    position:absolute;
+    right:-10px;
+    bottom:-10px;
+    display:block;
+    width: 142px;
+    height: 28px;
+    background-color: #610000;
+    color:#fff;
+    font-size:12px;
+    line-height:28px;
+    text-align:center;
+}
+#footer .p-box .s3{
+    display: inline-block;
+    margin-top:8px;
+    width: 790px;
+    height: 82px;
+    font-size:12px;
+}
+#footer .p-box .s3 a{
+    float: left;
+}
+/*最底部结束*/
+/*=============================================*/
+/*侧边栏部分开始*/
+#sidebar{
+    position: absolute;
+    bottom:100px;
+    right:0;
+    width: 150px;
+    height: 535px;
+    background:url("images/sidebar01.png") no-repeat;
+}
+#sidebar .sid-a{
+    position: absolute;
+    top:132px;
+    left:-24px;
+    display: block;
+    width: 24px;
+    background-color: #bc2e2e;
+    text-align: center;
+}
+#sidebar .sid-a em{
+    color:#fff;
+    font-size:14px;
+}
+#sidebar .sid-box{
+    width: 150px;
+    height: 405px;
+    padding-top:130px;
+}
+#sidebar .sid-box .sid-code{
+    width: 150px;
+    height: 170px;
+    background-position: -170px -352px;
+}
+#sidebar .sid-box .sid-lis li{
+    float: left;
+    width: 75px;
+    height: 70px;
+    padding-top:10px;
+    text-align: center;
+}
+#sidebar .sid-box .sid-lis em{
+    color:#3e3a39;
+    font-size:12px;
+}
+#sidebar .sid-box .sid-lis .icon{
+    margin-left:25px;
+    width: 27px;
+    height: 27px;
+    display: block;
+    background-position: -1420px -777px;
+}
+#sidebar .sid-box .sid-lis a:hover{
+    transform:translateY(-10px);
+}
