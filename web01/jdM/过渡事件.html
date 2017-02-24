@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border:1px solid #c91523;
+            transition:all 1s;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+          document.querySelector("div").onclick=function () {
+              this.style.backgroundColor="red";
+              document.querySelector("div").addEventListener("webkitTransitionEnd",function () {
+                  console.log("过渡结束了");
+                  this.style.borderRadius="20px";
+              });
+          };
+        };
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

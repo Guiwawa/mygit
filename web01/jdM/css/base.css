@@ -1,0 +1,69 @@
+*,
+::before,
+::after{
+    margin:0;
+    padding:0;
+    /*清除移动端点击高亮的效果*/
+    -webkit-tap-heightlight-color:transparent;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
+body{
+    font-size:14px;
+    font-family:"Microsoft YaHei",sans-serif;
+    color:#333;
+}
+a{
+    color:#333;
+}
+a:hover,a{
+    text-decoration:none;
+}
+ul,ol{
+    list-style:none;
+}
+input{
+    outline:none;
+    border:none;
+    /*清除移动端固定的表单样式*/
+    -webkit-appearance: none;
+}
+/*左右浮动*/
+.f-left{
+    float: left;
+}
+.f-right{
+    float: right;
+}
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content:"";
+    display:block;
+    line-height:0;
+    height: 0;
+    visibility: hidden;
+    clear:both;
+}
+.clearfix{
+    zoom:1;
+}
+/*精灵图*/
+[class^="icon_"]{
+    background: url("../images/sprites.png") no-repeat;
+    -webkit-background-size:200px 200px;
+    background-size:200px 200px;
+}
+.m_l10{
+    margin-left:10px;
+}
+.m_r10{
+    margin-right:10px;
+}
+.m_b10{
+    margin-bottom:10px;
+}
+.m_t10{
+    margin-top:10px;
+}
