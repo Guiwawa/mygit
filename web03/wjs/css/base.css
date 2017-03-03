@@ -1,0 +1,107 @@
+
+/* 导入 字体文件 */
+@font-face {
+    font-family: 'wjsfont';
+    src: url('../fonts/MiFie-Web-Font.eot');
+    src: url('../fonts/MiFie-Web-Font.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MiFie-Web-Font.woff') format('woff'),
+    url('../fonts/MiFie-Web-Font.ttf') format('truetype'),
+    url('../fonts/MiFie-Web-Font.svg#glyphicons_halflingsregular') format('svg');
+}
+/* 定义 使用的class */
+.wjsfont {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'wjsfont';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+.wjs_E900::before {
+    content: "\e900";
+}
+.wjs_2a::before {
+    content: "\2a";
+}
+.wjs_phone::before {
+    content: "\e908";
+}
+.wjs_E93e::before {
+    content: "\e93e";
+}
+.wjs_E920::before {
+    content: "\e920";
+}
+.wjs_E915::before{
+    content:"\e915";
+}
+.wjsfont-logo::before{
+    content: '\e920';
+}
+.wjsfont-name::before{
+    content: '\e921';
+}
+
+.wjsfont-e903::before{
+    content: '\e903';
+}
+.wjsfont-e901::before{
+    content: '\e901';
+}
+.wjsfont-e904::before{
+    content: '\e904';
+}
+.wjsfont-e905::before{
+    content: '\e905';
+}
+.wjsfont-e902::before{
+    content: '\e902';
+}
+
+/* 添加 产品列表的 文字样式 */
+.wjsfont-e915::before{
+    content:'\e915';
+}
+
+.wjsfont-new01::before{
+    content: "\e90e";
+}
+.wjsfont-new02::before{
+    content: "\e90f";
+}
+.wjsfont-new03::before{
+    content: "\e910";
+}
+.wjsfont-new04::before{
+    content: "\e911";
+}
+
+/* 网页 最下方的 合作单位 */
+.wjsfont-partner01::before{
+    content:"\e946";
+}
+.wjsfont-partner02::before{
+    content: "\e92f";
+}
+.wjsfont-partner03::before{
+    content: "\e92e";
+}
+.wjsfont-partner04::before{
+    content: "\e92a";
+}
+.wjsfont-partner05::before{
+    content: "\e929";
+}
+.wjsfont-partner06::before{
+    content: "\e931";
+}
+.wjsfont-partner07::before{
+    content: "\e92c";
+}
+.wjsfont-partner08::before{
+    content: "\e92b";
+}
+.wjsfont-partner09::before{
+    content: "\e92d";
+}
