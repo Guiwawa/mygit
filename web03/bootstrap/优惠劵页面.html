@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .price_ticket{
+            font-family: "Microsoft YaHei", sans-serif;
+            display: block;
+            text-decoration: none;
+            -webkit-box-shadow: 2px 2px .5px;
+        }
+        .price_ticket::after{
+
+        }
+        .price_ticket:hover{
+            text-decoration: none;
+        }
+        .price_ticket>.ticket_right{
+            position: relative;
+            width: 108px;
+            height: 150px;
+            float:right;
+            background-color: orange;
+            padding-top:20px;
+            text-align: center;
+            color:#fff;
+            font-size:15px;
+            border-left:1px dashed #eee;
+        }
+        .price_ticket>.ticket_right::before {
+            content:"";
+            position:absolute;
+            display:block;
+            width: 20px;
+            height: 20px;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+            background-color: #fff;
+            top:-10px;
+            left:-10px;
+            box-shadow:inset 0  -2px gray;
+        }
+        .price_ticket>.ticket_right::after{
+            content:"";
+            position:absolute;
+            display:block;
+            width: 20px;
+            height: 20px;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+            background-color: #fff;
+            bottom:-10px;
+            left:-10px;
+            box-shadow:inset 0 2px gray;
+        }
+        .price_ticket>.ticket_left{
+            height: 150px;
+            background-color: red;
+            overflow: hidden;
+        }
+        .price_ticket>.ticket_left>h3{
+            text-align: center;
+            font-size:16px;
+            color:#fff;
+            font-weight: 900;
+            overflow: hidden;
+        }
+        .price_ticket>.ticket_left>div{
+            margin-bottom:5px;
+        }
+        .price_ticket>.ticket_left>div:nth-of-type(2n){
+            text-align: right;
+        }
+        .price_ticket>.ticket_left>div>p{
+            font-size:12px;
+            color:#fff;
+            margin:3px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+<a href="" class="price_ticket">
+    <div class="ticket_right">
+        <p>8%</p>
+        <p>年利率</p>
+    </div>
+    <div class="ticket_left">
+        <h3>新手体验1002期</h3>
+        <div class="col-xs-6">
+            <p>起投金额</p>
+            <p>0.01万</p>
+        </div>
+        <div class="col-xs-6">
+            <p>起投金额</p>
+            <p>0.01万</p>
+        </div>
+        <div class="col-xs-6">
+            <p>起投金额</p>
+            <p>0.01万</p>
+        </div>
+        <div class="col-xs-6">
+            <p>起投金额</p>
+            <p>0.01万</p>
+        </div>
+    </div>
+</a>
+</body>
+</html>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
