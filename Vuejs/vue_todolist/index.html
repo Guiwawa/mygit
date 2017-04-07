@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue01</title>
+    <!-- 引入bootstrap相关的文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 引入vue -->
+    <script src="./js/vue.js"></script>
+    <script>
+        window.onload=function(){
+                new Vue({
+                    el:"#box",
+                    data:{
+                        // 定义myData存放数据
+                        myData:[],
+                        nowIndex:-1,
+                        username:"",
+                        sex:"",
+                        links:"",
+                        texts:""
+                         
+                    },
+                    methods:{
+                        add:function(){
+                            this.myData.push({
+                                name:this.username,
+                                sex:this.sex,
+                                links:this.links,
+                                texts:this.texts
+                            });
+                            this.username="";
+                            this.sex="";
+                            this.links="";
+                            this.texts="";
+                        },
+                        del:function(n){
+                            if(n>=0){
+                                this.myData.splice(n,1);
+                            }else{
+                                this.myData=[];
+                            }
+                        },
+                    }
+
+                })
+             }
+    </script>
+</head>
+<body>
+    <div class="container" id="box">
+        <!-- 用户输入区块 -->
+        <form action="" role="form">
+            <div class="form-group">
+                <label for="username">姓名：</label> 
+                <input type="text" id="username" class="form-control" placeholder="请输入你的名字让我知道你谁" v-model="username">
+            </div>
+            <div class="form-group">
+                <label for="sex">性别：</label> 
+                <input type="text" id="sex" class="form-control" placeholder="请输入你的性别" v-model="sex">
+            </div>
+            <div class="form-group">
+                <label for="links">我们的关系:</label> 
+                <input type="text" id="links" class="form-control" placeholder="请告诉我咱俩的关系" v-model="links">
+            </div>
+            <div class="form-group">
+                <label for="texts">留言:</label> 
+                <input type="text" id="texts" class="form-control" placeholder="请输入你要给我的留言" v-model="texts">
+            </div>
+            <div class="form-group">
+                 <input type="button" value="添加" class="btn btn-primary" v-on:click="add()">
+                   <input type="reset" value="重置" class="btn btn-danger">
+            </div>
+        </form>
+        <hr>
+        <!-- 信息显示区块 -->
+        <table  class="table table-bordered table-hover">
+            <caption class="h3 text-info text-center">留言表</caption>
+            <tr class="text-danger">
+                <th class="text-center">序号</th>
+                <th class="text-center">姓名</th>
+                <th class="text-center">性别</th>
+                <th class="text-center">关系</th>
+                <th class="text-center" colspan="2">留言内容</th>
+                <th class="text-center">操作</th>
+            </tr>
+            <tr  class="text-center" v-for="item in myData">
+            <!-- 遍历myData数据添加到表单 -->
+                <td>{{$index+1}}</td>
+                 <td>{{item.name}}</td>
+                 <td>{{item.sex}}</td>
+                 <td colspan="2">{{item.links}}</td>
+                 <td>{{item.texts}}</td>
+                <td><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#layer" v-on:click="nowIndex=$index">删除</button></td>
+            </tr>
+           
+            <tr class="text-center">
+                <td colspan="7" v-show="myData.length!==0">
+                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#layer" v-on:click="nowIndex=-2">删除全部</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="text-center text-muted" v-show="myData.length==0">
+                    <p>暂无数据…………</p>
+                </td>
+            </tr>
+        </table>
+    <!-- 模态框也叫弹出框 -->
+  <!--   当点击删除时出来一个弹出层，首先赋予一个角色，然后定义class="modal",必须点击对应的按钮时才能显示该模态，因此必须设置点击的入口，给要点击的按钮设置data-toggle="modal"和模态框对应，然后再给要点击的按钮设置data-target="#layer"用于指向模态框，因此要在模态框中设置相对应的id="layer";
+  然后开始设置模态了里面的内容 modal-dialog类可以设置一个盒子，modal-content类可以设置里面的内容;modal-content里面包含header,footer,border类,设置内容时如果想要点击X号关闭模态框，此时要给点击的X或者其他使用该功能更的按钮添加data-dismiss="modal"-->
+        <div role="dialog" class="modal fade" id="layer" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">
+                            确认删除吗？
+                        </h4>
+                    </div>
+                    <div class="modal-body text-right">
+                        <button class="btn btn-info" data-dismiss="modal">取消</button>
+                        <button class="btn btn-danger" data-dismiss="modal" v-on:click="del(nowIndex)">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+        </div>
+    </div>
+</body>
+</html>
