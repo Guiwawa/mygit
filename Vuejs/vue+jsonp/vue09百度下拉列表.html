@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuejs仿百度搜索框</title>
+    <style>
+      #box{
+        width: 400px;
+        margin:0 auto;
+      }
+      .gray{
+        background-color: gray;
+      }
+      .inputBox{
+        width: 300px;
+        height: 20px;
+      }
+      .ulBox{
+        width: 302px;
+        list-style: none;
+        border:1px solid #333;
+        border-top:none;
+        padding:0;
+        margin:0;
+      }
+    </style>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue-resource.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+              el:"body",
+              data:{
+                myData:[],
+                t1:"",
+                now:-1
+
+              },
+              methods:{
+                get:function(e){
+                  // 如果按的是下键或者是上键就跳出该函数
+                  if(e.keyCode==38||e.keyCode==40){
+                    return;
+                  }
+                   // 按回车可以搜索
+                   //  https://www.baidu.com/s?&wd=a 
+                    if(e.keyCode==13){
+                      window.open("https://www.baidu.com/s?&wd="+this.t1);
+                      this.t1="";
+                    }
+                    this.$http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",{
+                      wd:this.t1
+                        },{
+                            jsonp:"cb"
+                          }).then(function(res){
+                                this.myData=res.data.s
+
+                   },function(res){
+                    alert(res.status);
+                  })
+                 },
+                 // 按上下键可以跳转
+                 // 按下键
+                 chengDown:function(){
+                  this.now++;
+                  if(this.now==this.myData.length){
+                    this.now=0;
+                  }
+                  this.t1=this.myData[this.now];
+                  
+                 },
+                 // 按上键
+                 chengUp:function(){
+                  this.now--;
+                  if(this.now==-2){
+                    this.now=this.myData.length-1
+                  }
+                  this.t1=this.myData[this.now];
+                 }
+              }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box"> 
+  <h2>神奇的小框框！</h2>
+    <h3>只要一个搜索框！搜索你想要的任何信息</h3>
+    <h4>使用说明</h4>
+    <ol>
+      <li>输入想搜索的任何信息</li>
+      <li>按上键或下键可以转换输入框的内容</li>
+      <li>按回车键可实现搜索功能</li>
+    </ol>
+    
+     <input type="text" v-model="t1" @keyup="get($event)" @keydown.down="chengDown()" @keydown.up.prevent="chengUp()" placeholder="请输入你想搜的内容" class="inputBox">
+     <ul :class="{ulBox:myData.length!==0}">
+       <li v-for="value in myData" :class="{gray:$index==now}">
+         {{value}}
+       </li>
+     </ul>
+     <p v-show="myData.length==0">暂无数据…………</p>
+</div>
+    
+</body>
+</html>
+
